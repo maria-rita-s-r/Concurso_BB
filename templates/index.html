@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concurso BB - Banco do Brasil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Header / Barra Superior -->
+    <header class="header-bb">
+        <div class="header-container">
+            <button id="menu-toggle" class="menu-toggle-btn" aria-label="Abrir menu">☰</button>
+            <div class="logo-bb">
+                <strong>Banco do Brasil</strong>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Lateral (Drawer) -->
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>Banco do Brasil</h3>
+            <button id="menu-close" class="menu-close-btn">&times;</button>
+        </div>
+        <ul class="sidebar-list">
+            <li><a href="{{ url_for('menu.r_open_finance') }}">Open Finance</a></li>
+            <li><a href="{{ url_for('menu.r_sobre_nos') }}">O BB - Sobre nós</a></li>
+            <li><a href="{{ url_for('menu.r_blog') }}">Blog BB</a></li>
+            <li><a href="{{ url_for('menu.r_face') }}">BB nas redes sociais</a></li>
+            <li><a href="{{ url_for('menu.r_consorcios') }}">Empresas Coligadas</a></li>
+            <li><a href="{{ url_for('menu.r_transp') }}">Transparência</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <!-- Seção Banner Principal -->
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1>Vem fazer parte do Banco do Brasil!</h1>
+            </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='img/homemenina.jpg') }}" alt="Jovem com fones e óculos sorrindo">
+            </div>
+        </section>
+
+        <!-- Seção Concurso BB -->
+        <section class="concurso-section">
+            <h2>Concurso do Banco do Brasil</h2>
+            <p>Confira o resultado da Seleção externa 2022/001 do Banco do Brasil</p>
+            <p class="concurso-desc">
+                O último concurso externo do BB divulgado em dezembro de 2022 teve mais de um milhão de inscritos...
+            </p>
+
+            <!-- Cards de navegação/etapas -->
+            <div class="cards-grid">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='img/card1.jpg') }}" alt="Seleção externa BB">
+                    <h3>Seleção externa BB</h3>
+                    <p>Concursos em andamento, editais e perguntas frequentes.</p>
+                </div>
+                <div class="card">
+                    <img src="{{ url_for('static', filename='img/card2.jpg') }}" alt="Agente Comercial">
+                    <h3>Agente Comercial</h3>
+                    <p>Conheça a carreira, seus benefícios e suas vantagens.</p>
+                </div>
+                <div class="card">
+                    <img src="{{ url_for('static', filename='img/card3.jpg') }}" alt="Agente de Tecnologia">
+                    <h3>Agente de Tecnologia</h3>
+                    <p>Conheça a carreira, seus benefícios e suas vantagens.</p>
+                </div>
+                <div class="card">
+                    <img src="{{ url_for('static', filename='img/card4.jpg') }}" alt="Admissão no BB">
+                    <h3>Admissão no BB</h3>
+                    <p>Informações sobre processo admissional e qualificação BB.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Blog BB com Banner Específico -->
+        <section class="blog-banner-section">
+            <div class="blog-banner-content">
+                <img src="{{ url_for('static', filename='img/Banner BB.jpg') }}" alt="Blog BB - Banner Principal">
+            </div>
+        </section>
+    </main>
+
+    <!-- Script Simples para Controle do Menu -->
+    <script>
+        const toggleBtn = document.getElementById('menu-toggle');
+        const closeBtn = document.getElementById('menu-close');
+        const sidebar = document.getElementById('sidebar');
+
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

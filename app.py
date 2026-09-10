@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from config import Config
 from models import db
 from routes_inscricao import inscricao_bp
@@ -16,6 +16,11 @@ def create_app():
 
     app.register_blueprint(inscricao_bp)
     app.register_blueprint(menu_bp)
+
+    # >>> COLOQUE A ROTA PRINCIPAL AQUI <<<
+    @app.route('/')
+    def index():
+        return render_template('index.html')
 
     with app.app_context():
         db.create_all()

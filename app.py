@@ -17,7 +17,7 @@ def create_app():
     app.register_blueprint(inscricao_bp)
     app.register_blueprint(menu_bp)
 
-    # >>> COLOQUE A ROTA PRINCIPAL AQUI <<<
+    # Rota principal adicionada corretamente para carregar o index.html e o CSS
     @app.route('/')
     def index():
         return render_template('index.html')

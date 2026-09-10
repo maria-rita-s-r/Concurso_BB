@@ -1,8 +1,8 @@
 from flask import Flask, render_template
 from config import Config
 from models import db
-from routes_inscricao import inscricao_bp
-from routes_menu import menu_bp
+from rotas_inscr import inscricao_bp
+from rotas_menu import menu_bp
 from flask_mail import Mail
 
 mail = Mail()

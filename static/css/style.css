@@ -1,0 +1,229 @@
+/* Variables */
+:root {
+    --primary-color: #f4d03f; /* Amarelo Banco do Brasil */
+    --secondary-color: #003366; /* Azul Institucional */
+    --text-color: #333333;
+    --background-color: #f9f9f9;
+    --white: #ffffff;
+    --error-color: #d9534f;
+    --success-color: #5cb85c;
+    --border-radius: 6px;
+}
+
+/* Reset & Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+/* Header */
+.header-bb {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.menu-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.logo-bb {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+}
+
+/* Sidebar / Menu Lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 280px;
+    height: 100%;
+    background-color: var(--white);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    transition: left 0.3s ease;
+    z-index: 1100;
+    padding: 1.5rem;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+}
+
+.menu-close-btn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.sidebar-list {
+    list-style: none;
+}
+
+.sidebar-list li {
+    margin-bottom: 1rem;
+}
+
+.sidebar-list a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.sidebar-list a:hover {
+    color: var(--primary-color);
+}
+
+/* Main & Hero */
+.main-content {
+    margin-top: 70px;
+    padding: 2rem 1rem;
+}
+
+.hero-section {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 4rem 2rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 3rem;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+/* Registration Form */
+.inscricao-section {
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.inscricao-container h2 {
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #e1be2b;
+}
+
+/* Feedback Messages */
+.form-message {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: 600;
+    display: none;
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    color: var(--success-color);
+    display: block;
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    color: var(--error-color);
+    display: block;
+}
+
+.form-message.loading {
+    background-color: #fff3cd;
+    color: #856404;
+    display: block;
+}
+
+/* Footer */
+.footer-bb {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #e9ecef;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+    .inscricao-section {
+        padding: 1.5rem;
+    }
+}
